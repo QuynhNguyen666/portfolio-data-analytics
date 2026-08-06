@@ -72,7 +72,7 @@ def XuatFileKetQua(filename,Content,Score):
     for i in range(len(Content)):
         data =re.findall(r'^N\d{8}',Content[i])
         _data=data[0]+','+str(Score[i])+'\n'
-        with open ('D:/DA/p4/ASM1/DAP304x_asm1_quynhnttfx36142@funix.edu.vn/TestGradeCalculator/Data Result/' + filename+'_grades.txt','a+') as grade:
+        with open ('D:/DA/p4/TestGradeCalculator/Data Result/' + filename+'_grades.txt','a+') as grade:
             grade.write(_data)
 
 #task1
@@ -85,7 +85,7 @@ def NhapTenFile():
         try:
             filename = input('Nhập lớp để chấm điểm(vd class1):')
             #print(filename)
-            with open('D:/DA/p4/ASM1/DAP304x_asm1_quynhnttfx36142@funix.edu.vn/TestGradeCalculator/Data Files/' + filename + '.txt', "r") as file1:
+            with open('D:/DA/p4/TestGradeCalculator/Data Files/' + filename + '.txt', "r") as file1:
                   FileContent = file1.readline()
                   Total_Invalid=0
                   Total_Valid=0 
@@ -125,10 +125,10 @@ while p==1:
         print('3.8. Trả về các câu hỏi bị học sinh sai qua nhiều nhất theo thứ tự: số thứ tự câu hỏi, số lượng học sinh trả lời sai, tỉ lệ bị sai:')
         print( PhanTichKetQua(WrongAns,Total_Valid)) #(nếu có cùng số lượng cho nhiều câu hỏi bị sai thì phải liệt kê ra đầy đủ).
         print('task 4 danh sách điểm')
-        with open('D:/DA/p4/ASM1/DAP304x_asm1_quynhnttfx36142@funix.edu.vn/TestGradeCalculator/Data Result/' + filename+'_grades.txt','w') as file:
+        with open('D:/DA/p4/TestGradeCalculator/Data Result/' + filename+'_grades.txt','w') as file:
             pass
         XuatFileKetQua(filename,Content,Score)
-        with open('D:/DA/p4/ASM1/DAP304x_asm1_quynhnttfx36142@funix.edu.vn/TestGradeCalculator/Data Result/' + filename+'_grades.txt','r') as file:
+        with open('D:/DA/p4/TestGradeCalculator/Data Result/' + filename+'_grades.txt','r') as file:
            ReadFile=file.read()
            print(ReadFile)
         print('########################################### ĐÃ CHẤM XONG BÀI  ######################################################################')

@@ -9,7 +9,7 @@ def nhaptenfile():
     while True:
         try:
             filename = input('nhập tên file:')
-            df = pd.read_csv('D:/DA/p4/TestGradeCalculator/Data data files/' + filename + '.txt',engine='python', on_bad_lines = bad_line , sep=",", header = None, index_col = None)
+            df = pd.read_csv('D:/DA/p4/TestGradeCalculator/Data files/' + filename + '.txt',engine='python', on_bad_lines = bad_line , sep=",", header = None, index_col = None)
             return df,filename
             break
         except FileNotFoundError:

@@ -9,7 +9,7 @@ def nhaptenfile():
     while True:
         try:
             filename = input('nhập tên file:')
-            df = pd.read_csv(filename + '.txt',engine='python', on_bad_lines = bad_line , sep=",", header = None, index_col = None)
+            df = pd.read_csv('D:/DA/p4/TestGradeCalculator/Data data files/' + filename + '.txt',engine='python', on_bad_lines = bad_line , sep=",", header = None, index_col = None)
             return df,filename
             break
         except FileNotFoundError:
@@ -104,10 +104,10 @@ while p==1:
     print(b) #(nếu có cùng số lượng cho nhiều câu hỏi bị sai thì phải liệt kê ra đầy đủ).
     print('task 4 danh sách điểm')
     #print(score)
-    with open(filename+'_gradesNC.txt','w') as file:
+    with open('D:/DA/p4/TestGradeCalculator/Data Result/' + filename+'_gradesNC.txt','w') as file:
         pass
-    score.to_csv(filename+'_gradesNC.txt', sep='\t', index=False)
-    with open(filename+'_gradesNC.txt','r') as file:
+    score.to_csv('D:/DA/p4/TestGradeCalculator/Data Result/' + filename+'_gradesNC.txt', sep='\t', index=False)
+    with open('D:/DA/p4/TestGradeCalculator/Data Result/' + filename+'_gradesNC.txt','r') as file:
         ReadFile=file.read()
         print(ReadFile)
     print('########################################### ĐÃ CHẤM XONG BÀI  ######################################################################')
